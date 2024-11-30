@@ -1,0 +1,49 @@
+<odoo>
+    <record id="view_stock_out_form" model="ir.ui.view">
+        <field name="name">stock.out.form</field>
+        <field name="model">nhom8.stock.out</field>
+        <field name="arch" type="xml">
+            <form string="Phiếu xuất">
+                <sheet>
+                    <group>
+                        <field name="stock_out_id" readonly="1"/>
+                        <field name="date_out"/>
+                        <field name="customer"/>
+                        <field name="total_price" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Các sản phẩm">
+                            <field name="line_ids" context="{'default_stock_out_id': id}">
+                                <list editable="bottom" string="Các sản phẩm">
+                                    <field name="product_id" options="{'no_create': True}"/>
+                                    <field name="quantity"/>
+                                    <field name="sale_price"/>
+                                    <field name="total_price" readonly="1"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_stock_out_tree" model="ir.ui.view">
+        <field name="name">stock.out.tree</field>
+        <field name="model">nhom8.stock.out</field>
+        <field name="arch" type="xml">
+            <list string="Phiếu xuất">
+                <field name="stock_out_id"/>
+                <field name="date_out"/>
+                <field name="customer"/>
+                <field name="total_price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_stock_out" model="ir.actions.act_window">
+        <field name="name">Phiếu xuất</field>
+        <field name="res_model">nhom8.stock.out</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

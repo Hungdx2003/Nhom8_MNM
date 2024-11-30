@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <menuitem id="menu_warehouse_management" name="Quản lý kho" sequence="10"/>
+        <menuitem id="menu_stock_overview" name="Tổng Quan Kho" parent="menu_warehouse_management" sequence="1" action="action_dashboard"/>
+        <menuitem id="menu_product" name="Sản Phẩm" parent="menu_warehouse_management" sequence="2" action="action_product"/>
+        <menuitem id="menu_inventory" name="Tồn kho" parent="menu_warehouse_management" sequence="3" action="action_inventory"/>
+        <menuitem id="menu_stock_in" name="Nhập kho" parent="menu_warehouse_management" sequence="4" action="action_stock_in"/>
+        <menuitem id="menu_stock_out" name="Xuất kho" parent="menu_warehouse_management" sequence="5" action="action_stock_out"/>
+    </data>
+</odoo>
